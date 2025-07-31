@@ -1,5 +1,4 @@
 from numpy import array, prod, sign
-from numpy.random import uniform
 from math import factorial
 from itertools import product
 
@@ -31,15 +30,3 @@ def sum(x: array, a: array, c:array) -> array:
     denominator = factorial(n-1) * 2**(n+1) * prod(a)
     
     return numerator / denominator
-
-def sum_sim(a:array, b:array, n:int = 10**6) -> array:
-    '''
-    Runs a simulations for the sum of n independent U(a,b) random variables
-    '''   
-    assert len(a) == len(b)
-    
-    simulation = 0 
-    for i in range(len(a)):
-        simulation += uniform(low=a[i], high=b[i], size=n)
-
-    return simulation
